@@ -10,8 +10,8 @@ def home():
 def insert():
     con = sqlite3.connect('login.db')
     cur = con.cursor()
-    cur.execute("INSERT INTO USERS (Username, Password) VALUES (?,?),
-                (request.form['un'],request.form['pw']
+    cur.execute("INSERT INTO USERS (Username, Password) VALUES (?,?)",
+                (request.form['un'],request.form['pw']))
     con.commit()
     return request.form['un'] + ' added'
                  

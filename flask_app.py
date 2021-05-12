@@ -14,7 +14,7 @@ def create():
 	con.commit()
 	return 'CREATE'
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['POST'])
 def home():
     if request.method == 'POST':
         con = sqlite3.connect('login.db')

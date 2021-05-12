@@ -6,7 +6,7 @@ import sqlite3
 def create():
 	con = sqlite3.connect('login.db')
 	cur = con.cursor()
-	cur.execute(	"""	CREATE TABLE Users(
+	cur.execute(	"""	CREATE TABLE USERS(
 					Username VARCHAR(20) NOT NULL PRIMARY KEY,
 					Password VARCHAR(20) NOT NULL
 						  )

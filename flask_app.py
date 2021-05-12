@@ -14,19 +14,8 @@ def create():
 	con.commit()
 	return 'CREATE'
 
-@app.route('/', methods=['POST'])
+@app.route('/')
 def home():
-    if request.method == 'POST':
-        con = sqlite3.connect('login.db')
-        cur = con.cursor()
-        try:
-            cur.execute("INSERT INTO Users (Username, Password) VALUES (?,?)",
-                (request.form['un'],request.form['pw']))
-        except Exception as e:
-            return str(e)
-        con.commit()
-        return request.form['un'] + ' added'
-    else:
         return render_template('simple_form.html')
 
 @app.route('/insert', methods=['POST'])

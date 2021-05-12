@@ -31,6 +31,6 @@ def insert():
 def select():     
     con = sqlite3.connect('login.db')
     cur = con.cursor()
-    cur.execute("SELECT * FROM Users")
+    cur.execute("SELECT * FROM USERS")
     return str(cur.fetchall())            
              
